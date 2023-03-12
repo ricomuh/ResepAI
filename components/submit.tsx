@@ -22,7 +22,10 @@ export default function SubmitForm({
     <div className="flex flex-row items-center justify-center w-full gap-2">
       <div className="flex flex-row gap-2 items-center justify-center max-w-xl flex-wrap p-2 rounded-xl bg-gray-900">
         {ingredients.map((ingredient, index) => (
-          <div className="flex flex-row gap-1 items-center justify-between px-2 py-0.5 text-white bg-indigo-600 hover:bg-indigo-700 duration-200 rounded-lg shadow-sm text-sm">
+          <div
+            className="flex flex-row gap-1 items-center justify-between px-2 py-0.5 text-white bg-indigo-600 hover:bg-indigo-700 duration-200 rounded-lg shadow-sm text-sm"
+            key={index}
+          >
             <p>{ingredient}</p>
             <button
               type="button"

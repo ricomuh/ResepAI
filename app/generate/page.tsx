@@ -23,12 +23,12 @@ export async function generateMetadata({
 }) {
   const recipes: Result = await getRecipes(searchParams.ingredients as string);
   return {
-    title: `RecipeGPT - Resep ${recipes.title}`,
+    title: `ResepAI - Resep ${recipes.title}`,
     description: `Resep ${recipes.title} dengan bahan ${recipes.bahan.join(
       ", "
     )}`,
     openGraph: {
-      title: `RecipeGPT - Resep ${recipes.title}`,
+      title: `ResepAI - Resep ${recipes.title}`,
       description: `Resep ${recipes.title} dengan bahan ${recipes.bahan.join(
         ", "
       )}`,
