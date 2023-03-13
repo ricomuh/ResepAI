@@ -21,7 +21,7 @@ Untuk menjalankan aplikasi ResepAI secara lokal, ikuti langkah-langkah berikut:
 1. Clone repository ini ke dalam direktori lokal Anda.
 
 ```bash
-git clone https://github.com/username/resepai.git
+git clone https://github.com/ricomuh/ResepAI.git
 ```
 
 2. Masuk ke direktori proyek.
@@ -56,4 +56,4 @@ Jika Anda ingin berkontribusi pada proyek ini, silakan kirimkan pull request ata
 
 ## Lisensi
 
-Proyek ini menggunakan lisensi MIT. Silakan lihat berkas [LICENSE](LICENSE) untuk informasi lebih lanjut.
+Proyek ini menggunakan lisensi MIT. Silakan lihat berkas [LICENSE](https://mit-license.org/) untuk informasi lebih lanjut.
