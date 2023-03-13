@@ -2,12 +2,9 @@
 
 import { useEffect, useRef } from "react";
 import { useIngredients } from "./ingredientsContext";
+import { useSearchParams } from "next/navigation";
 
-export default function SubmitForm({
-  ingredientsInit,
-}: {
-  ingredientsInit?: string;
-}) {
+export default function SubmitForm() {
   const {
     ingredients,
     removeIngredient,
@@ -15,6 +12,9 @@ export default function SubmitForm({
     setIngredientsSetted,
   } = useIngredients();
   const ingredientsRef = useRef<HTMLInputElement>(null);
+  const searchParams = useSearchParams();
+
+  const ingredientsInit = searchParams.get("ingredients");
 
   useEffect(() => {
     if (ingredientsInit) {

@@ -52,19 +52,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function Generate({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | string[] | undefined };
-}) {
+export default async function Generate() {
   // const recipes: Result = await getRecipes(searchParams.ingredients as string);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-10 gap-3">
-      <p>{JSON.stringify(searchParams)}</p>
+      {/* <p>{JSON.stringify(searchParams)}</p> */}
       <Logo />
       <Form />
-      <SubmitForm ingredientsInit={searchParams.ingredients as string} />
+      <SubmitForm />
       <ClientOnly />
       {/* <RecipeWrapper /> */}
     </div>
