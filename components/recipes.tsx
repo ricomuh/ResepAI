@@ -19,10 +19,10 @@ export default function Recipes({
           {loading ? "Memuat Resep..." : `Resep ${data?.title}`}
         </h2>
       </div>
-      <div className="w-full flex flex-row gap-4">
-        <div className="w-1/3 flex flex-col">
+      <div className="w-full flex flex-col md:flex-row gap-4">
+        <div className="w-full md:w-1/3 flex flex-col">
           <h3 className="text-xl font-bold text-center text-white">Bahan</h3>
-          <div className="w-full flex flex-col gap-2 p-2">
+          <div className="w-full flex flex-row md:flex-col flex-wrap gap-2 p-2">
             {loading
               ? Array(Math.floor(Math.random() * 8) + 1)
                   .fill(0)
@@ -40,7 +40,7 @@ export default function Recipes({
                       "+"
                     )}`}
                     target="_blank"
-                    className="text-lg font-bold p-2 text-white bg-indigo-800 hover:bg-indigo-600 duration-200 rounded-lg"
+                    className="text-sm font-semibold p-2 text-white bg-indigo-800 hover:bg-indigo-600 duration-200 rounded-lg"
                     key={index}
                   >
                     {bahan}
@@ -48,7 +48,7 @@ export default function Recipes({
                 ))}
           </div>
         </div>
-        <div className="w-2/3 flex flex-col p-2 gap-2">
+        <div className="w-full md:w-2/3 flex flex-col p-2 gap-2">
           <h3 className="text-xl font-bold text-center text-white">
             Step-by-step
           </h3>

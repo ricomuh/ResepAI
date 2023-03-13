@@ -19,9 +19,9 @@ export default function SubmitForm({
   }, []);
 
   return (
-    <div className="flex flex-row items-center justify-center w-full gap-2">
+    <div className="flex flex-row items-center justify-center mx-auto w-11/12 md:max-w-xl gap-2">
       {ingredients.length > 0 && (
-        <div className="flex flex-row gap-2 items-center justify-center max-w-xl flex-wrap p-2 rounded-xl bg-gray-900">
+        <div className="flex flex-row gap-2 items-center justify-center flex-wrap flex-grow p-2 rounded-xl bg-gray-900">
           {ingredients.map((ingredient, index) => (
             <div
               className="flex flex-row gap-1 items-center justify-between px-2 py-0.5 text-white bg-indigo-600 hover:bg-indigo-700 duration-200 rounded-lg shadow-sm text-sm"
@@ -65,7 +65,20 @@ export default function SubmitForm({
             type="submit"
             className="px-4 py-2 text-white bg-indigo-600 rounded-xl shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-indigo-200 focus:ring-opacity-50 duration-200 font-semibold"
           >
-            Cari Resep
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15.75 15.75l-2.489-2.489m0 0a3.375 3.375 0 10-4.773-4.773 3.375 3.375 0 004.774 4.774zM21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
           </button>
         )}
       </form>
