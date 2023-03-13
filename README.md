@@ -1,38 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ResepAI
 
-## Getting Started
+ResepAI adalah sebuah aplikasi berbasis web yang menggunakan NextJS, Typescript, Tailwind, dan OpenAI API. Aplikasi ini dapat membantu pengguna mencari resep makanan berdasarkan bahan-bahan yang dimiliki dengan bantuan teknologi GPT3.5.
 
-First, run the development server:
+## Demo
+
+Aplikasi ini dapat diakses pada [https://resep-ai.vercel.app/](https://resep-ai.vercel.app/).
+
+## Penggunaan
+
+1. Masukkan bahan-bahan yang dimiliki pada kolom pencarian di halaman utama.
+2. Tekan tombol "Cari Resep".
+3. Aplikasi akan menampilkan daftar resep makanan yang dapat dibuat dengan bahan-bahan yang dimiliki. Setiap resep akan menampilkan gambar, judul, dan deskripsi singkat.
+4. Klik salah satu resep untuk melihat detail resep, termasuk bahan-bahan dan langkah-langkah pembuatan.
+5. Selamat mencoba!
+
+## Instalasi
+
+Untuk menjalankan aplikasi ResepAI secara lokal, ikuti langkah-langkah berikut:
+
+1. Clone repository ini ke dalam direktori lokal Anda.
+
+```bash
+git clone https://github.com/username/resepai.git
+```
+
+2. Masuk ke direktori proyek.
+
+```bash
+cd resepai
+```
+
+3. Install dependencies.
+
+```bash
+npm install
+```
+
+4. Copy file `.env.example` menjadi `.env` dan isi dengan API key OpenAI Anda.
+
+```bash
+cp .env.example .env
+```
+
+5. Jalankan aplikasi.
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+6. Aplikasi dapat diakses pada `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Kontribusi
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Jika Anda ingin berkontribusi pada proyek ini, silakan kirimkan pull request atau buat issue baru. Kami sangat terbuka untuk saran dan masukan dari komunitas.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Lisensi
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Proyek ini menggunakan lisensi MIT. Silakan lihat berkas [LICENSE](LICENSE) untuk informasi lebih lanjut.
