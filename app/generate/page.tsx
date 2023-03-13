@@ -2,6 +2,7 @@ import Form from "@/components/form";
 import Logo from "@/components/logo";
 import Recipes from "@/components/recipes";
 import SubmitForm from "@/components/submit";
+import { Metadata } from "next";
 
 export interface Result {
   title: string;
@@ -9,6 +10,7 @@ export interface Result {
   steps: string[];
 }
 
+/*
 async function getRecipes(ingredients: string) {
   const result = await fetch(
     process.env.NEXT_PUBLIC_API_URL + "/get?ingredients=" + ingredients,
@@ -38,20 +40,30 @@ export async function generateMetadata({
     },
   };
 }
+*/
+
+export const metadata: Metadata = {
+  title: "ResepAI",
+  description: "ResepAI adalah aplikasi yang dapat membuat resep makanan",
+  openGraph: {
+    title: "ResepAI",
+    description: "ResepAI adalah aplikasi yang dapat membuat resep makanan",
+  },
+};
 
 export default async function Generate({
   searchParams,
 }: {
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
-  const recipes: Result = await getRecipes(searchParams.ingredients as string);
+  // const recipes: Result = await getRecipes(searchParams.ingredients as string);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-10 gap-3">
       <Logo />
       <Form />
       <SubmitForm ingredientsInit={searchParams.ingredients as string} />
-      <Recipes data={recipes} />
+      <Recipes />
     </div>
   );
 }

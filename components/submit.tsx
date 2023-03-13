@@ -8,13 +8,19 @@ export default function SubmitForm({
 }: {
   ingredientsInit?: string;
 }) {
-  const { ingredients, removeIngredient, setIngredients } = useIngredients();
+  const {
+    ingredients,
+    removeIngredient,
+    setIngredients,
+    setIngredientsSetted,
+  } = useIngredients();
   const ingredientsRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (ingredientsInit) {
       const ingredientsArray = ingredientsInit.split(",");
       setIngredients(ingredientsArray);
+      setIngredientsSetted(true);
     }
   }, []);
 

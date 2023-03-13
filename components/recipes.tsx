@@ -1,15 +1,49 @@
+"use client";
+
 import Link from "next/link";
 import type { Result } from "@/app/generate/page";
+import { useState, useEffect } from "react";
+import getRecipe from "@/lib/getRecipe";
+import { useIngredients } from "./ingredientsContext";
+import { NextSeo } from "next-seo";
 
-export default function Recipes({
-  data,
-  loading,
-}: {
-  data?: Result;
-  loading?: boolean;
-}) {
+export default function Recipes() {
+  const [loading, setLoading] = useState<boolean>(true);
+  const [data, setData] = useState<Result | null | undefined>(null);
+  const [error, setError] = useState<string>("");
+
+  const { ingredients, ingredientsSetted } = useIngredients();
+
+  useEffect(() => {
+    if (ingredients.length > 0 && ingredientsSetted) {
+      getRecipe(ingredients).then((res) => {
+        if (res.error) {
+          setError(res.message);
+        } else {
+          setData(res.result);
+          // document.title = `ResepAI - Resep ${res.result?.title}`;
+        }
+        setLoading(false);
+      });
+    }
+  }, [ingredientsSetted]);
+
+  if (error) {
+    return (
+      <div className="w-full flex bg-gray-900 rounded-xl shadow-md p-4 gap-4 mt-10 justify-center items-center">
+        <p>{error}</p>
+      </div>
+    );
+  }
+
   return (
     <div className="w-full flex flex-col bg-gray-900 rounded-xl shadow-md p-4 gap-4 mt-10">
+      <NextSeo
+        title={loading ? "Memuat Resep..." : `Resep ${data?.title}`}
+        description={
+          loading ? "Memuat Resep..." : `Berikut adalah resep ${data?.title}`
+        }
+      />
       <div className="w-full flex p-2">
         <h2
           className={`w-full text-2xl font-bold text-center text-white ${
@@ -76,6 +110,9 @@ export default function Recipes({
           </div>
         </div>
       </div>
+      {/* <div className="text-sm text-white">
+        {JSON.stringify({ loading, data, error })}
+      </div> */}
     </div>
   );
 }

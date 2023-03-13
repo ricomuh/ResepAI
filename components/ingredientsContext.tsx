@@ -7,11 +7,15 @@ export const IngredientsContext = createContext<{
   addIngredient: (ingredient: string) => void;
   removeIngredient: (ingredient: number) => void;
   setIngredients: (ingredients: string[]) => void;
+  ingredientsSetted: boolean;
+  setIngredientsSetted: (ingredientsSetted: boolean) => void;
 }>({
   ingredients: [],
   addIngredient: () => {},
   removeIngredient: () => {},
   setIngredients: () => {},
+  ingredientsSetted: false,
+  setIngredientsSetted: () => {},
 });
 
 export function useIngredients() {
@@ -24,6 +28,7 @@ export default function Ingredients({
   children: React.ReactNode;
 }) {
   const [ingredients, setIngredients] = useState<string[]>([]);
+  const [ingredientsSetted, setIngredientsSetted] = useState<boolean>(false);
 
   function addIngredient(ingredient: string) {
     setIngredients([...ingredients, ingredient]);
@@ -37,7 +42,14 @@ export default function Ingredients({
 
   return (
     <IngredientsContext.Provider
-      value={{ ingredients, addIngredient, removeIngredient, setIngredients }}
+      value={{
+        ingredients,
+        addIngredient,
+        removeIngredient,
+        setIngredients,
+        ingredientsSetted,
+        setIngredientsSetted,
+      }}
     >
       {children}
     </IngredientsContext.Provider>
