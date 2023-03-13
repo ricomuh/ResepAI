@@ -11,7 +11,10 @@ export interface Result {
 
 async function getRecipes(ingredients: string) {
   const result = await fetch(
-    process.env.NEXT_PUBLIC_API_URL + "/get?ingredients=" + ingredients
+    process.env.NEXT_PUBLIC_API_URL + "/get?ingredients=" + ingredients,
+    {
+      cache: "no-store",
+    }
   );
   return result.json();
 }
