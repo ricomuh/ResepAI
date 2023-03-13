@@ -23,6 +23,7 @@ export default function SubmitForm({
       setIngredientsSetted(true);
       console.log("ingredients has been setted: ", ingredientsArray);
     }
+    console.log("ingredients init: ", ingredientsInit);
   }, []);
 
   return (
