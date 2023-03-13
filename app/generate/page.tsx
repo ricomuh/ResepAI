@@ -61,7 +61,7 @@ export default async function Generate({
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-10 gap-3">
-      <p>{searchParams.ingredients}</p>
+      <p>{JSON.stringify(searchParams)}</p>
       <Logo />
       <Form />
       <SubmitForm ingredientsInit={searchParams.ingredients as string} />
