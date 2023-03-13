@@ -62,7 +62,11 @@ export default function Recipes() {
                   .fill(0)
                   .map((_, index) => (
                     <div
-                      className="bg-indigo-800 hover:bg-indigo-600 duration-200 rounded-lg animate-pulse h-6"
+                      className={`bg-indigo-800 hover:bg-indigo-600 duration-200 rounded-lg animate-pulse h-6 ${
+                        ["delay-100", "delay-200", "delay-300", "delay-400"][
+                          Math.floor(Math.random() * 4)
+                        ]
+                      }`}
                       key={index}
                     />
                   ))
@@ -92,7 +96,11 @@ export default function Recipes() {
                   .fill(0)
                   .map((_, index) => (
                     <div
-                      className="text-lg font-semibold text-center text-white hover:text-gray-300 hover:bg-gray-600 cursor-pointer duration-200 animate-pulse h-6"
+                      className={`text-lg font-semibold text-center text-white bg-gray-600 cursor-pointer duration-200 animate-pulse h-6 ${
+                        ["delay-100", "delay-200", "delay-300", "delay-400"][
+                          Math.floor(Math.random() * 4)
+                        ]
+                      }`}
                       key={index}
                     />
                   ))
