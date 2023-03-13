@@ -24,7 +24,7 @@ export default function SubmitForm({
       console.log("ingredients has been setted: ", ingredientsArray);
     }
     // console.log("ingredients init: ", ingredientsInit);
-  }, []);
+  }, [ingredientsInit, setIngredients, setIngredientsSetted]);
 
   return (
     <div className="flex flex-row items-center justify-center mx-auto w-11/12 md:max-w-xl gap-2">
