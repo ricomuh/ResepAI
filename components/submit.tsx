@@ -21,6 +21,7 @@ export default function SubmitForm({
       const ingredientsArray = ingredientsInit.split(",");
       setIngredients(ingredientsArray);
       setIngredientsSetted(true);
+      console.log("ingredients has been setted: ", ingredientsArray);
     }
   }, []);
 

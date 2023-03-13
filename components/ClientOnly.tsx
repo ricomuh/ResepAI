@@ -7,17 +7,26 @@ import getRecipe from "@/lib/getRecipe";
 import { useIngredients } from "./ingredientsContext";
 import { NextSeo } from "next-seo";
 
-export default function Recipes() {
+export default function ClientOnly({
+  children,
+  ...delegated
+}: React.DetailedHTMLProps<
+  React.HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+>) {
   const [loading, setLoading] = useState<boolean>(true);
   const [data, setData] = useState<Result | null | undefined>(null);
   const [error, setError] = useState<string>("");
+  const [mounted, setMounted] = useState(false);
 
   const { ingredients, ingredientsSetted } = useIngredients();
 
   useEffect(() => {
     if (ingredients.length > 0 && ingredientsSetted) {
+      console.log("Getting recipe...");
       getRecipe(ingredients).then((res) => {
         if (res.error) {
+          console.error(res);
           setError(res.message);
         } else {
           setData(res.result);
@@ -27,6 +36,12 @@ export default function Recipes() {
       });
     }
   }, [ingredientsSetted]);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
 
   if (error) {
     return (
@@ -38,12 +53,6 @@ export default function Recipes() {
 
   return (
     <div className="w-full flex flex-col bg-gray-900 rounded-xl shadow-md p-4 gap-4 mt-10">
-      <NextSeo
-        title={loading ? "Memuat Resep..." : `Resep ${data?.title}`}
-        description={
-          loading ? "Memuat Resep..." : `Berikut adalah resep ${data?.title}`
-        }
-      />
       <div className="w-full flex p-2">
         <h2
           className={`w-full text-2xl font-bold text-center text-white ${
@@ -62,13 +71,9 @@ export default function Recipes() {
                   .fill(0)
                   .map((_, index) => (
                     <div
-                      className={`bg-indigo-800 hover:bg-indigo-600 duration-200 rounded-lg animate-pulse h-6 ${
-                        ["delay-100", "delay-200", "delay-300", "delay-400"][
-                          Math.floor(Math.random() * 4)
-                        ]
-                      }`}
+                      className={`bg-indigo-800 hover:bg-indigo-600 duration-200 rounded-lg animate-pulse h-6 `}
                       key={index}
-                    />
+                    ></div>
                   ))
               : data?.bahan.map((bahan, index) => (
                   <Link
@@ -96,13 +101,9 @@ export default function Recipes() {
                   .fill(0)
                   .map((_, index) => (
                     <div
-                      className={`text-lg font-semibold text-center text-white bg-gray-600 cursor-pointer duration-200 animate-pulse h-6 ${
-                        ["delay-100", "delay-200", "delay-300", "delay-400"][
-                          Math.floor(Math.random() * 4)
-                        ]
-                      }`}
+                      className={`text-lg font-semibold text-center text-white bg-gray-600 cursor-pointer duration-200 animate-pulse h-6`}
                       key={index}
-                    />
+                    ></div>
                   ))
               : data?.steps.map((step, index) => (
                   <div

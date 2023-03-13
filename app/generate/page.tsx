@@ -1,6 +1,7 @@
 import Form from "@/components/form";
 import Logo from "@/components/logo";
-import Recipes from "@/components/recipes";
+import ClientOnly from "@/components/ClientOnly";
+// import RecipeWrapper from "./recipeWrapper";
 import SubmitForm from "@/components/submit";
 import { Metadata } from "next";
 
@@ -63,7 +64,8 @@ export default async function Generate({
       <Logo />
       <Form />
       <SubmitForm ingredientsInit={searchParams.ingredients as string} />
-      <Recipes />
+      <ClientOnly />
+      {/* <RecipeWrapper /> */}
     </div>
   );
 }
