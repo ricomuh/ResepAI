@@ -10,7 +10,7 @@ Aplikasi ini dapat diakses pada [https://resep-ai.vercel.app/](https://resep-ai.
 
 1. Masukkan bahan-bahan yang dimiliki pada kolom pencarian di halaman utama.
 2. Tekan tombol "Cari Resep".
-3. Aplikasi akan menampilkan daftar resep makanan yang dapat dibuat dengan bahan-bahan yang dimiliki. Setiap resep akan menampilkan gambar, judul, dan deskripsi singkat.
+3. Aplikasi akan menampilkan daftar resep makanan yang dapat dibuat dengan bahan-bahan yang dimiliki. Setiap resep akan menampilkan step-by-step pembuatan masakannya.
 4. Klik salah satu resep untuk melihat detail resep, termasuk bahan-bahan dan langkah-langkah pembuatan.
 5. Selamat mencoba!
 
