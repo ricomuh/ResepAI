@@ -7,7 +7,7 @@ import getRecipe from "@/lib/getRecipe";
 import { useIngredients } from "./ingredientsContext";
 import { NextSeo } from "next-seo";
 
-export default function ClientOnly({
+export default function Recipes({
   children,
   ...delegated
 }: React.DetailedHTMLProps<
@@ -55,7 +55,7 @@ export default function ClientOnly({
     <div className="w-full flex flex-col bg-gray-900 rounded-xl shadow-md p-4 gap-4 mt-10">
       <div className="w-full flex p-2">
         <h2
-          className={`w-full text-2xl font-bold text-center text-white ${
+          className={`w-full text-2xl font-bold text-center text-white underline ${
             loading && "animate-pulse h-8"
           }`}
         >
@@ -120,10 +120,10 @@ export default function ClientOnly({
                   ))
               : data?.steps.map((step, index) => (
                   <div
-                    className="text-lg font-semibold text-white hover:text-gray-300 hover:bg-gray-800 cursor-pointer duration-200 flex flex-row gap-2 items-center p-2 rounded-lg group"
+                    className="text-lg font-semibold text-white hover:text-gray-300 hover:bg-gray-800 cursor-pointer duration-200 flex flex-row gap-4 items-center p-2 rounded-lg group"
                     key={index}
                   >
-                    <div className="flex items-center justify-center rounded-md bg-pink-500 p-4 group-hover:bg-pink-600 duration-200">
+                    <div className="flex items-center justify-center rounded-md bg-pink-600 p-4 group-hover:bg-pink-500 duration-200">
                       {index + 1}
                     </div>
                     <div>{step}</div>
@@ -132,9 +132,6 @@ export default function ClientOnly({
           </div>
         </div>
       </div>
-      {/* <div className="text-sm text-white">
-        {JSON.stringify({ loading, data, error })}
-      </div> */}
     </div>
   );
 }
