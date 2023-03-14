@@ -18,6 +18,9 @@ export const metadata: Metadata = {
     title: "ResepAI",
     description: "ResepAI adalah aplikasi yang dapat membuat resep makanan",
   },
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default async function Generate() {
