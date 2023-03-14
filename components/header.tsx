@@ -10,10 +10,15 @@ export default function Header() {
   ];
 
   return (
-    <header className="flex w-full justify-end items-center py-2 px-4 text-white font-semibold">
+    <header className="flex w-full justify-end items-center py-2 px-4 font-semibold">
       <div className="flex items-center divide-x-2 divide-gray-700">
         {links.map((link, index) => (
-          <Link key={index} href={link.href} className="px-2" target="_blank">
+          <Link
+            key={index}
+            href={link.href}
+            className="px-2 text-white hover:text-indigo-400 duration-200"
+            target="_blank"
+          >
             {link.name}
           </Link>
         ))}
