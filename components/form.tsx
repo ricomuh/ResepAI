@@ -17,7 +17,10 @@ export default function Form() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex justify-between items-center">
+    <form
+      onSubmit={handleSubmit}
+      className="flex justify-between items-center duration-200"
+    >
       <input
         ref={inputRef}
         type="text"
@@ -25,7 +28,9 @@ export default function Form() {
         id="ingredient"
         className="w-full px-4 py-2 text-gray-900 bg-white border border-gray-300 rounded-l-xl shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 outline-none duration-200"
         placeholder={
-          ingredients.length > 0 ? "Tambahkan ingredient" : "Bingung masak apa?"
+          ingredients.length > 0
+            ? "Tambahkan ingredient"
+            : "Apa saja di kulkasmu?"
         }
       />
       <button
@@ -43,7 +48,7 @@ export default function Form() {
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
-            d="M12 4.5v15m7.5-7.5h-15"
+            d="M12 6v12m6-6H6"
           />
         </svg>
       </button>

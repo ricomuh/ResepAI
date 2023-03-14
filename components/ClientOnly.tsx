@@ -65,13 +65,26 @@ export default function ClientOnly({
       <div className="w-full flex flex-col md:flex-row gap-4">
         <div className="w-full md:w-1/3 flex flex-col">
           <h3 className="text-xl font-bold text-center text-white">Bahan</h3>
-          <div className="w-full flex flex-row md:flex-col flex-wrap gap-2 p-2">
+          <div
+            className={`w-full flex flex-row ${
+              !loading && `md:flex-col`
+            } flex-wrap gap-2 p-2`}
+          >
             {loading
-              ? Array(Math.floor(Math.random() * 8) + 1)
+              ? // random from 5-10
+                Array(Math.floor(Math.random() * 5) + 5)
                   .fill(0)
                   .map((_, index) => (
                     <div
-                      className={`bg-indigo-800 hover:bg-indigo-600 duration-200 rounded-lg animate-pulse h-6 `}
+                      className={`bg-indigo-800 hover:bg-indigo-600 duration-200 rounded-lg animate-pulse h-6 ${
+                        ["w-1/2", "w-1/3", "w-1/4"][
+                          Math.floor(Math.random() * 3)
+                        ]
+                      } ${
+                        ["delay-50", "delay-100", "delay-150", "delay-200"][
+                          index % 4
+                        ]
+                      }`}
                       key={index}
                     ></div>
                   ))
@@ -97,11 +110,11 @@ export default function ClientOnly({
           </h3>
           <div className="w-full flex flex-col gap-2">
             {loading
-              ? Array(Math.floor(Math.random() * 8) + 1)
+              ? Array(Math.floor(Math.random() * 5) + 5)
                   .fill(0)
                   .map((_, index) => (
                     <div
-                      className={`text-lg font-semibold text-center text-white bg-gray-600 cursor-pointer duration-200 animate-pulse h-6`}
+                      className="animate-pulse h-10 bg-gray-800 hover:bg-gray-700 cursor-pointer duration-200 flex flex-row gap-2 items-center p-2 rounded-lg group"
                       key={index}
                     ></div>
                   ))
@@ -110,7 +123,7 @@ export default function ClientOnly({
                     className="text-lg font-semibold text-white hover:text-gray-300 hover:bg-gray-800 cursor-pointer duration-200 flex flex-row gap-2 items-center p-2 rounded-lg group"
                     key={index}
                   >
-                    <div className="flex items-center justify-center rounded-md bg-indigo-700 p-4 group-hover:bg-indigo-800 duration-200">
+                    <div className="flex items-center justify-center rounded-md bg-pink-500 p-4 group-hover:bg-pink-600 duration-200">
                       {index + 1}
                     </div>
                     <div>{step}</div>

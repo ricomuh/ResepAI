@@ -56,7 +56,7 @@ export default async function Generate() {
   // const recipes: Result = await getRecipes(searchParams.ingredients as string);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-10 gap-3">
+    <div className="flex flex-col items-center justify-center h-full py-10 gap-3 w-full">
       {/* <p>{JSON.stringify(searchParams)}</p> */}
       <Logo />
       <Form />
