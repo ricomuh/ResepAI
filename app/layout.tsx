@@ -9,6 +9,14 @@ import Ingredients from "@/components/ingredientsContext";
 export const metadata: Metadata = {
   title: "ResepAI",
   description: "ResepAI adalah aplikasi yang dapat membuat resep makanan",
+  icons: {
+    icon: "/icon.png",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+  },
 };
 
 const inter = Inter({
