@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     description:
       "ResepAI adalah aplikasi yang dapat membuat resep makanan berdasarkan bahan yang dimasukkan menggunakan teknologi GPT-3.5",
   },
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function Home() {

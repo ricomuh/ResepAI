@@ -57,3 +57,5 @@ Jika Anda ingin berkontribusi pada proyek ini, silakan kirimkan pull request ata
 ## Lisensi
 
 Proyek ini menggunakan lisensi MIT. Silakan lihat berkas [LICENSE](https://mit-license.org/) untuk informasi lebih lanjut.
+
+<a href="https://www.flaticon.com/free-icons/food" title="food icons">Food icons created by Pause08 - Flaticon</a>
