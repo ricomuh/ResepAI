@@ -30,7 +30,7 @@ export default function Form() {
         placeholder={
           ingredients.length > 0
             ? "Tambahkan ingredient"
-            : "Apa saja di kulkasmu?"
+            : "Ada apa saja di kulkasmu?"
         }
       />
       <button
