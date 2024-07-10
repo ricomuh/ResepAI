@@ -1,6 +1,18 @@
 import { Result } from "@/app/generate/page";
 
-export default async function getRecipe(ingredients: string[]) {
+type ResponseSuccess = {
+  error: false;
+  result: Result;
+};
+
+type ResponseError = {
+  error: true;
+  message: string;
+};
+
+export default async function getRecipe(
+  ingredients: string[]
+): Promise<ResponseSuccess | ResponseError> {
   const response = await fetch(
     process.env.NEXT_PUBLIC_OPENAI_API_URL ||
       "https://api.openai.com/v1/chat/completions",
