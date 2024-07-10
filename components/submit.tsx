@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { Suspense, useEffect, useRef } from "react";
 import { useIngredients } from "./ingredientsContext";
 import { useSearchParams } from "next/navigation";
 
-export default function SubmitForm() {
+function Form() {
   const {
     ingredients,
     removeIngredient,
@@ -91,5 +91,13 @@ export default function SubmitForm() {
         )}
       </form>
     </div>
+  );
+}
+
+export default function SubmitForm() {
+  return (
+    <Suspense>
+      <Form />
+    </Suspense>
   );
 }
